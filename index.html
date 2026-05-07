@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<!-- saved from url=(0240)file:///Users/sean.ang/Library/Application%20Support/Claude/local-agent-mode-sessions/224d0914-a9d8-4375-9c6c-62aff9ae65f0/389054a8-2a24-4e04-a765-567a9c1125a8/local_72477443-e409-4472-b726-79238a9a9cd1/outputs/miner_history_wireframe.html# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miner History — Wireframe</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f3f4f6; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 32px 16px; }
+  .container { width: 100%; max-width: 1100px; }
+  .header { margin-bottom: 20px; }
+  .header h1 { font-size: 18px; font-weight: 600; color: #111827; margin-bottom: 4px; }
+  .header p { font-size: 13px; color: #6b7280; }
+  .wf-wrap { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; }
+  .wf-header { padding: 14px 20px; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; justify-content: space-between; }
+  .wf-label { font-size: 11px; font-weight: 600; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.07em; }
+  .wf-hint { font-size: 12px; color: #9ca3af; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Miner History — Interactive Wireframes</h1>
+    <p>Phase 1 · Toggle between WF1 (View drawer) and WF2 (Miner History page). Click rows in WF2 to expand inline detail.</p>
+  </div>
+
+  <div class="wf-wrap">
+    <div class="wf-header">
+      <span class="wf-label">Lyra · Miner History · Phase 1</span>
+      <span class="wf-hint">Interactive prototype — not final UI</span>
+    </div>
+
+    <!-- Toggle -->
+    <div style="display:flex;border-bottom:1px solid #e5e7eb;">
+      <button id="prd-wb1" onclick="prdShowWF(1)" style="flex: 1 1 0%; padding: 10px 16px; font-size: 12px; cursor: pointer; border-width: medium 1px medium medium; border-style: none solid none none; border-color: currentcolor rgb(229, 231, 235) currentcolor currentcolor; border-image: initial; background: rgb(17, 24, 39); color: rgb(255, 255, 255); font-weight: 500; font-family: inherit;">WF1 — View drawer · History tab</button>
+      <button id="prd-wb2" onclick="prdShowWF(2)" style="flex: 1 1 0%; padding: 10px 16px; font-size: 12px; cursor: pointer; border-width: medium 1px medium medium; border-style: none solid none none; border-color: currentcolor rgb(229, 231, 235) currentcolor currentcolor; border-image: initial; background: rgb(249, 250, 251); color: rgb(107, 114, 128); font-family: inherit;">WF2 — Miner History · miner selected</button>
+      <button id="prd-wb3" onclick="prdShowWF(3)" style="flex: 1 1 0%; padding: 10px 16px; font-size: 12px; cursor: pointer; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; background: rgb(249, 250, 251); color: rgb(107, 114, 128); font-family: inherit;">WF3 — Miner History · no miner selected</button>
+    </div>
+
+    <!-- WF1 -->
+    <div id="prd-wf1" style="display: flex; height: 560px; overflow: hidden;">
+      <div style="width:150px;background:#111827;display:flex;flex-direction:column;flex-shrink:0;font-family:-apple-system,BlinkMacSystemFont,&#39;Segoe UI&#39;,sans-serif;">
+        <div style="padding:9px 12px;color:#14b8a6;font-size:12px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07)">Lyra</div>
+        <div style="padding:5px 12px;font-size:8px;color:rgba(255,255,255,0.3);border-bottom:1px solid rgba(255,255,255,0.07)"><b style="color:rgba(255,255,255,0.5);font-size:9px">2026.05.06  13:58:08</b></div>
+        <div style="flex:1;padding:5px 0;overflow:hidden">
+          <div style="padding:4px 12px;font-size:9px;color:rgba(255,255,255,0.4)">⊞ Overview</div>
+          <div style="padding:4px 12px;font-size:9px;color:#fff;background:rgba(20,184,166,0.1);border-left:2px solid #14b8a6">⛏ Miner Management</div>
+          <div style="padding:4px 22px;font-size:9px;color:#14b8a6;border-left:2px solid #14b8a6">Miner List</div>
+          <div style="padding:4px 22px;font-size:9px;color:rgba(255,255,255,0.35)">Rack View</div>
+          <div style="padding:4px 12px;font-size:9px;color:rgba(255,255,255,0.4)">⚠ Faults &amp; Statuses</div>
+          <div style="padding:4px 12px;font-size:9px;color:rgba(255,255,255,0.4)">⚙ Configuration</div>
+          <div style="padding:4px 12px;font-size:9px;color:rgba(255,255,255,0.4)">🔧 Maintenance</div>
+          <div style="padding:4px 12px;font-size:9px;color:rgba(255,255,255,0.4)">☰ Activity Log</div>
+        </div>
+        <div style="padding:7px 12px;border-top:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;gap:5px">
+          <div style="width:20px;height:20px;border-radius:50%;background:#14b8a6;color:#fff;font-size:7px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">SA</div>
+          <div><div style="font-size:8px;color:rgba(255,255,255,0.6)">sean.ang</div><div style="font-size:7px;color:rgba(255,255,255,0.3)">Site Viewer</div></div>
+        </div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;overflow:hidden;background:#f3f4f6;min-width:0">
+        <div style="background:#fff;border-bottom:1px solid #e5e7eb;padding:0 12px;display:flex">
+          <div style="padding:8px 12px;font-size:11px;color:#14b8a6;border-bottom:2px solid #14b8a6;font-weight:500">Under-operation</div>
+          <div style="padding:8px 12px;font-size:11px;color:#9ca3af">Off-operation</div>
+        </div>
+        <div style="flex:1;display:flex;overflow:hidden">
+          <div style="flex:1;overflow:hidden;background:#fff;border-right:1px solid #e5e7eb;display:flex;flex-direction:column">
+            <div style="padding:5px 10px;border-bottom:1px solid #e5e7eb;display:flex;flex-wrap:wrap;gap:3px;align-items:center;background:#fff">
+              <span style="font-size:8px;color:#9ca3af">Faults</span>
+              <span style="font-size:8px;padding:1px 6px;border:0.5px solid #111827;border-radius:3px;color:#fff;background:#111827">Hashboard faults (124)</span>
+              <span style="font-size:8px;padding:1px 6px;border:0.5px solid #111827;border-radius:3px;color:#fff;background:#111827">Chip faults (57)</span>
+              <span style="font-size:8px;padding:1px 6px;border:0.5px solid #e5e7eb;border-radius:3px;color:#d1d5db">Fan faults (0)</span>
+            </div>
+            <div style="padding:5px 10px;border-bottom:1px solid #e5e7eb;display:flex;gap:5px;align-items:center">
+              <span style="font-size:9px;padding:3px 8px;border:0.5px solid #d1d5db;border-radius:4px;color:#374151;background:#fff">Select all</span>
+              <span style="font-size:9px;padding:3px 8px;border:0.5px solid #14b8a6;border-radius:4px;color:#14b8a6;background:#fff">Batch action ▾</span>
+              <span style="font-size:9px;padding:3px 7px;border:0.5px solid #d1d5db;border-radius:4px;color:#374151;background:#fff;margin-left:auto">Refresh</span>
+              <span style="font-size:9px;padding:3px 7px;border:0.5px solid #d1d5db;border-radius:4px;color:#374151;background:#fff">Export all</span>
+            </div>
+            <div style="overflow-y:auto;flex:1">
+              <table style="width:100%;border-collapse:collapse">
+                <thead><tr style="background:#f9fafb">
+                  <th style="padding:5px 8px;font-size:8px;color:#9ca3af;font-weight:500;border-bottom:1px solid #e5e7eb;text-align:left"></th>
+                  <th style="padding:5px 8px;font-size:8px;color:#9ca3af;font-weight:500;border-bottom:1px solid #e5e7eb;text-align:left">IP address ↕</th>
+                  <th style="padding:5px 8px;font-size:8px;color:#9ca3af;font-weight:500;border-bottom:1px solid #e5e7eb;text-align:left">Serial number</th>
+                  <th style="padding:5px 8px;font-size:8px;color:#9ca3af;font-weight:500;border-bottom:1px solid #e5e7eb;text-align:left">Brand, type and model</th>
+                  <th style="padding:5px 8px;font-size:8px;color:#9ca3af;font-weight:500;border-bottom:1px solid #e5e7eb;text-align:left">Location</th>
+                  <th style="padding:5px 8px;font-size:8px;color:#9ca3af;font-weight:500;border-bottom:1px solid #e5e7eb;text-align:left">Detection status</th>
+                  <th style="padding:5px 8px;font-size:8px;color:#9ca3af;font-weight:500;border-bottom:1px solid #e5e7eb;text-align:left">Action</th>
+                </tr></thead>
+                <tbody id="prd-w1rows"><tr style="background:#f0fdfa"><td style="padding:4px 8px"><input type="checkbox" style="accent-color:#14b8a6" checked=""></td><td style="padding:4px 8px;font-size:9px"><a style="color:#14b8a6">10.1.1.1</a></td><td style="padding:4px 8px;font-size:8px;color:#9ca3af">S151749261401293</td><td style="padding:4px 8px;font-size:9px">SealMiner · A2 Pro · 248T</td><td style="padding:4px 8px;font-size:9px">B01-D1-R01-Slot 1</td><td style="padding:4px 8px;font-size:9px"><span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#22c55e;margin-right:2px;vertical-align:middle"></span>Online</td><td style="padding:4px 8px;font-size:9px"><span style="color:#14b8a6;cursor:pointer;margin-right:3px">View</span><span style="color:#9ca3af;cursor:pointer">···</span></td></tr><tr style="background:#fff"><td style="padding:4px 8px"><input type="checkbox" style="accent-color:#14b8a6"></td><td style="padding:4px 8px;font-size:9px"><a style="color:#14b8a6">10.1.1.2</a></td><td style="padding:4px 8px;font-size:8px;color:#9ca3af">S151755261500502</td><td style="padding:4px 8px;font-size:9px">SealMiner · A2 Pro · 254T</td><td style="padding:4px 8px;font-size:9px">B01-D1-R01-Slot 2</td><td style="padding:4px 8px;font-size:9px"><span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#22c55e;margin-right:2px;vertical-align:middle"></span>Online</td><td style="padding:4px 8px;font-size:9px"><span style="color:#14b8a6;cursor:pointer;margin-right:3px">View</span><span style="color:#9ca3af;cursor:pointer">···</span></td></tr><tr style="background:#fff"><td style="padding:4px 8px"><input type="checkbox" style="accent-color:#14b8a6"></td><td style="padding:4px 8px;font-size:9px"><a style="color:#14b8a6">10.1.1.3</a></td><td style="padding:4px 8px;font-size:8px;color:#9ca3af">S151759261500131</td><td style="padding:4px 8px;font-size:9px">SealMiner · A2 Pro · 258T</td><td style="padding:4px 8px;font-size:9px">B01-D1-R01-Slot 3</td><td style="padding:4px 8px;font-size:9px"><span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#22c55e;margin-right:2px;vertical-align:middle"></span>Online</td><td style="padding:4px 8px;font-size:9px"><span style="color:#14b8a6;cursor:pointer;margin-right:3px">View</span><span style="color:#9ca3af;cursor:pointer">···</span></td></tr><tr style="background:#fff"><td style="padding:4px 8px"><input type="checkbox" style="accent-color:#14b8a6"></td><td style="padding:4px 8px;font-size:9px"><a style="color:#14b8a6">10.1.1.4</a></td><td style="padding:4px 8px;font-size:8px;color:#9ca3af">S151761261401439</td><td style="padding:4px 8px;font-size:9px">SealMiner · A2 Pro · 260T</td><td style="padding:4px 8px;font-size:9px">B01-D1-R01-Slot 4</td><td style="padding:4px 8px;font-size:9px"><span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#22c55e;margin-right:2px;vertical-align:middle"></span>Online</td><td style="padding:4px 8px;font-size:9px"><span style="color:#14b8a6;cursor:pointer;margin-right:3px">View</span><span style="color:#9ca3af;cursor:pointer">···</span></td></tr><tr style="background:#fff"><td style="padding:4px 8px"><input type="checkbox" style="accent-color:#14b8a6"></td><td style="padding:4px 8px;font-size:9px"><a style="color:#14b8a6">10.1.1.5</a></td><td style="padding:4px 8px;font-size:8px;color:#9ca3af">S151759261401489</td><td style="padding:4px 8px;font-size:9px">SealMiner · A2 Pro · 258T</td><td style="padding:4px 8px;font-size:9px">B01-D1-R01-Slot 5</td><td style="padding:4px 8px;font-size:9px"><span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#22c55e;margin-right:2px;vertical-align:middle"></span>Online</td><td style="padding:4px 8px;font-size:9px"><span style="color:#14b8a6;cursor:pointer;margin-right:3px">View</span><span style="color:#9ca3af;cursor:pointer">···</span></td></tr><tr style="background:#fff"><td style="padding:4px 8px"><input type="checkbox" style="accent-color:#14b8a6"></td><td style="padding:4px 8px;font-size:9px"><a style="color:#14b8a6">10.1.1.6</a></td><td style="padding:4px 8px;font-size:8px;color:#9ca3af">S151761261401446</td><td style="padding:4px 8px;font-size:9px">SealMiner · A2 Pro · 260T</td><td style="padding:4px 8px;font-size:9px">B01-D1-R01-Slot 6</td><td style="padding:4px 8px;font-size:9px"><span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#22c55e;margin-right:2px;vertical-align:middle"></span>Online</td><td style="padding:4px 8px;font-size:9px"><span style="color:#14b8a6;cursor:pointer;margin-right:3px">View</span><span style="color:#9ca3af;cursor:pointer">···</span></td></tr></tbody>
+              </table>
+            </div>
+          </div>
+          <!-- Drawer -->
+          <div style="width:278px;flex-shrink:0;background:#fff;display:flex;flex-direction:column;overflow:hidden">
+            <div style="padding:9px 12px 7px;border-bottom:1px solid #e5e7eb;display:flex;align-items:flex-start;justify-content:space-between">
+              <a style="color:#14b8a6;font-size:13px;font-weight:600;text-decoration:none">10.1.1.1</a>
+              <div style="display:flex;align-items:center;gap:6px"><span style="color:#9ca3af;font-size:12px;cursor:pointer">···</span><span style="color:#9ca3af;font-size:15px;cursor:pointer;line-height:1">×</span></div>
+            </div>
+            <div style="display:flex;border-bottom:1px solid #e5e7eb;overflow-x:auto" id="prd-drtabs"><div class="prd-drt" data-t="bi" onclick="prdDrSetTab(&#39;bi&#39;)" style="padding:7px 9px;font-size:10px;color:#9ca3af;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;font-weight:400">Overview</div><div class="prd-drt" data-t="hist" onclick="prdDrSetTab(&#39;hist&#39;)" style="padding:7px 9px;font-size:10px;color:#14b8a6;cursor:pointer;border-bottom:2px solid #14b8a6;white-space:nowrap;font-weight:500">History</div><div style="padding:7px 8px;font-size:10px;color:#9ca3af;margin-left:auto">···</div></div>
+            <div style="flex:1;overflow-y:auto" id="prd-drbody"><div style="display:flex;gap:4px;padding:6px 12px;border-bottom:1px solid #f3f4f6"><span onclick="prdDrSetFilter(&#39;ops&#39;)" style="font-size:9px;padding:2px 9px;border-radius:20px;border:1px solid #14b8a6;cursor:pointer;color:#fff;background:#14b8a6">Operations</span><span onclick="prdDrSetFilter(&#39;maint&#39;)" style="font-size:9px;padding:2px 9px;border-radius:20px;border:1px solid #d1d5db;cursor:pointer;color:#6b7280;background:#fff">Maintenance</span></div><div style="padding:7px 12px;border-bottom:1px solid #f3f4f6;cursor:pointer;font-family:inherit"><div style="display:flex;align-items:center;gap:4px"><span style="font-size:9px;padding:1px 6px;border-radius:20px;font-weight:500;background:#dbeafe;color:#1e40af">Operation</span><span style="font-size:10px;color:#111827;flex:1">Reboot</span><span style="font-size:9px;color:#16a34a">✓</span></div><div style="font-size:9px;color:#9ca3af;margin-top:2px">2026.04.30 19:25 · ezekiel.martin</div></div><div style="padding:7px 12px;border-bottom:1px solid #f3f4f6;cursor:pointer;font-family:inherit"><div style="display:flex;align-items:center;gap:4px"><span style="font-size:9px;padding:1px 6px;border-radius:20px;font-weight:500;background:#dbeafe;color:#1e40af">Movement</span><span style="font-size:10px;color:#111827;flex:1">R02-Slot 12 → R01-Slot 1</span><span style="font-size:9px;color:#9ca3af">—</span></div><div style="font-size:9px;color:#9ca3af;margin-top:2px">2026.01.15 09:30 · system</div></div><div style="padding:7px 12px;border-bottom:1px solid #f3f4f6;cursor:pointer;font-family:inherit"><div style="display:flex;align-items:center;gap:4px"><span style="font-size:9px;padding:1px 6px;border-radius:20px;font-weight:500;background:#dbeafe;color:#1e40af">Operation</span><span style="font-size:10px;color:#111827;flex:1">Configure pool</span><span style="font-size:9px;color:#16a34a">✓</span></div><div style="font-size:9px;color:#9ca3af;margin-top:2px">2025.11.20 08:45 · ezekiel.martin</div></div><a style="display:block;text-align:center;padding:8px 12px;border-top:1px solid #f3f4f6;color:#14b8a6;font-size:10px;cursor:pointer;text-decoration:none">View full history →</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WF2 -->
+    <div id="prd-wf2" style="display: none; height: 560px; overflow: hidden;">
+      <div style="display:flex;height:100%">
+        <div style="width:150px;background:#111827;display:flex;flex-direction:column;flex-shrink:0;font-family:-apple-system,BlinkMacSystemFont,&#39;Segoe UI&#39;,sans-serif;">
+          <div style="padding:9px 12px;color:#14b8a6;font-size:12px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07)">Lyra</div>
+          <div style="flex:1;padding:5px 0">
+            <div style="padding:4px 12px;font-size:9px;color:rgba(255,255,255,0.4)">⊞ Overview</div>
+            <div style="padding:4px 12px;font-size:9px;color:#fff;background:rgba(20,184,166,0.1);border-left:2px solid #14b8a6">⛏ Miner Management</div>
+            <div style="padding:4px 22px;font-size:9px;color:#14b8a6;border-left:2px solid #14b8a6">Miner List</div>
+            <div style="padding:4px 22px;font-size:9px;color:rgba(255,255,255,0.35)">Rack View</div>
+            <div style="padding:4px 12px;font-size:9px;color:rgba(255,255,255,0.4)">⚠ Faults &amp; Statuses</div>
+            <div style="padding:4px 12px;font-size:9px;color:rgba(255,255,255,0.4)">🔧 Maintenance</div>
+            <div style="padding:4px 12px;font-size:9px;color:rgba(255,255,255,0.4)">☰ Activity Log</div>
+          </div>
+          <div style="padding:7px 12px;border-top:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;gap:5px">
+            <div style="width:20px;height:20px;border-radius:50%;background:#14b8a6;color:#fff;font-size:7px;font-weight:700;display:flex;align-items:center;justify-content:center">SA</div>
+            <div><div style="font-size:8px;color:rgba(255,255,255,0.6)">sean.ang</div><div style="font-size:7px;color:rgba(255,255,255,0.3)">Site Viewer</div></div>
+          </div>
+        </div>
+        <div style="flex:1;overflow-y:auto;padding:12px;background:#f3f4f6;font-family:-apple-system,BlinkMacSystemFont,&#39;Segoe UI&#39;,sans-serif" id="prd-hp"><div style="font-size:15px;font-weight:600;color:#111827;margin-bottom:12px;font-family:inherit">Miner History</div><div style="font-size:10px;color:#6b7280;margin-bottom:4px;font-family:inherit">Miner</div><div style="background:#fff;border:1px solid #e5e7eb;border-radius:6px;padding:6px 10px;display:flex;align-items:center;gap:6px;margin-bottom:7px;font-family:inherit"><span style="color:#d1d5db;font-size:10px">🔍</span><span style="font-size:11px;color:#d1d5db;flex:1">Search by IP address or serial number…</span></div><div style="background:#fff;border:1px solid #d1fae5;border-radius:6px;padding:7px 10px;display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;font-family:inherit"><div style="display:flex;align-items:center;gap:8px"><div style="width:28px;height:28px;border-radius:5px;background:#e6f7f5;color:#14b8a6;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0">⛏</div><div><div style="font-size:12px;font-weight:600;color:#111827">10.1.1.1</div><div style="font-size:9px;color:#9ca3af;margin-top:1px">S151749261401293 · SealMiner A2 Pro · 248T · B01-D1-R01-Slot 1</div></div></div><span style="color:#9ca3af;font-size:14px;cursor:pointer;line-height:1">×</span></div><div style="font-size:10px;color:#6b7280;margin-bottom:4px;font-family:inherit">Date range</div><div style="display:flex;gap:0;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;background:#f3f4f6;width:fit-content;margin-bottom:10px" id="prd-drpills"><span class="prd-drp" data-r="24h" onclick="prdSetDR(&#39;24h&#39;)" style="padding:5px 11px;font-size:11px;cursor:pointer;color:#6b7280;border-right:1px solid #e5e7eb;background:#f3f4f6;font-weight:400;font-family:inherit">Last 24 hours</span><span class="prd-drp" data-r="7d" onclick="prdSetDR(&#39;7d&#39;)" style="padding:5px 11px;font-size:11px;cursor:pointer;color:#6b7280;border-right:1px solid #e5e7eb;background:#f3f4f6;font-weight:400;font-family:inherit">Last 7 days</span><span class="prd-drp" data-r="30d" onclick="prdSetDR(&#39;30d&#39;)" style="padding:5px 11px;font-size:11px;cursor:pointer;color:#14b8a6;border-right:1px solid #e5e7eb;background:#fff;font-weight:500;font-family:inherit">Last 30 days</span><span class="prd-drp" data-r="custom" onclick="prdSetDR(&#39;custom&#39;)" style="padding:5px 11px;font-size:11px;cursor:pointer;color:#6b7280;border-right:1px solid #e5e7eb;background:#f3f4f6;font-weight:400;font-family:inherit">Custom</span></div><div style="display:flex;border-bottom:1px solid #e5e7eb;background:#fff;border-radius:7px 7px 0 0;overflow:hidden;border:1px solid #e5e7eb;border-bottom:none" id="prd-pgtabs"><div class="prd-pgt" data-t="ops" onclick="prdSetP2T(&#39;ops&#39;)" style="padding: 8px 16px; font-size: 11px; color: rgb(20, 184, 166); cursor: pointer; border-bottom: 2px solid rgb(20, 184, 166); font-weight: 500; font-family: inherit;">Operations</div><div class="prd-pgt" data-t="maint" onclick="prdSetP2T(&#39;maint&#39;)" style="padding: 8px 16px; font-size: 11px; color: rgb(156, 163, 175); cursor: pointer; border-bottom: 2px solid transparent; font-weight: 400; font-family: inherit;">Maintenance</div></div><div style="background:#fff;border:1px solid #e5e7eb;border-radius:0 7px 7px 7px;overflow:hidden"><div style="display:flex;align-items:center;justify-content:flex-end;padding:5px 12px;border-bottom:1px solid #f3f4f6"><button style="font-size:10px;padding:3px 10px;border:1px solid #d1d5db;border-radius:4px;background:#fff;color:#374151;cursor:pointer;font-family:inherit">Export CSV</button></div><table style="width:100%;border-collapse:collapse" id="prd-p2tbl"><thead id="prd-p2thead"><tr style="background:#f9fafb"><th style="padding:6px 12px;text-align:left;color:#9ca3af;font-weight:500;border-bottom:1px solid #e5e7eb;font-size:10px">Start time</th><th style="padding:6px 12px;text-align:left;color:#9ca3af;font-weight:500;border-bottom:1px solid #e5e7eb;font-size:10px">Operation</th><th style="padding:6px 12px;text-align:left;color:#9ca3af;font-weight:500;border-bottom:1px solid #e5e7eb;font-size:10px">Result</th><th style="padding:6px 12px;text-align:left;color:#9ca3af;font-weight:500;border-bottom:1px solid #e5e7eb;font-size:10px">Duration</th><th style="padding:6px 12px;text-align:left;color:#9ca3af;font-weight:500;border-bottom:1px solid #e5e7eb;font-size:10px">Operator</th><th style="padding:6px 12px;text-align:left;color:#9ca3af;font-weight:500;border-bottom:1px solid #e5e7eb;font-size:10px">Actions</th></tr></thead><tbody id="prd-p2body"><tr style="background:#f0fdfa;cursor:pointer" onclick="prdToggleP2(0)"><td style="padding:7px 12px;font-size:10px;color:#9ca3af;border-bottom:1px solid #f3f4f6;white-space:nowrap">2026.04.30 19:25</td><td style="padding:7px 12px;font-size:11px;color:#111827;border-bottom:1px solid #f3f4f6">Reboot</td><td style="padding:7px 12px;border-bottom:1px solid #f3f4f6"><span style="color:#16a34a;font-size:10px">Success</span></td><td style="padding:7px 12px;font-size:10px;color:#6b7280;border-bottom:1px solid #f3f4f6">0d 0h 0m 4s</td><td style="padding:7px 12px;font-size:11px;color:#6b7280;border-bottom:1px solid #f3f4f6">ezekiel.martin</td><td style="padding:7px 12px;border-bottom:1px solid #f3f4f6"><button onclick="event.stopPropagation();prdToggleP2(0)" style="font-size:10px;color:#fff;border:1px solid #14b8a6;padding:3px 8px;border-radius:4px;background:#14b8a6;cursor:pointer;font-family:inherit">Close ▲</button></td></tr><tr><td colspan="6" style="padding:0;background:#f8fffe;border-bottom:1px solid #a7f3d0"><div style="padding:12px 16px;border-top:1px solid #99f6e4;font-family:inherit"><div style="font-size:9px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.4px;margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid #e5e7eb">Details</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 14px"><div><div style="font-size:9px;color:#9ca3af">Triggered by</div><div style="font-size:10px;color:#111827;margin-top:1px">Manual</div></div><div><div style="font-size:9px;color:#9ca3af">Exit code</div><div style="font-size:10px;color:#111827;margin-top:1px">0</div></div><div><div style="font-size:9px;color:#9ca3af">Previous uptime</div><div style="font-size:10px;color:#111827;margin-top:1px">14d 3h</div></div></div><div style="margin-top:8px;padding-top:7px;border-top:1px solid #e5e7eb;display:flex;align-items:center;gap:8px"><span style="font-size:9px;color:#9ca3af;font-family:monospace">OP-20260430-0041</span><a href="file:///Users/sean.ang/Library/Application%20Support/Claude/local-agent-mode-sessions/224d0914-a9d8-4375-9c6c-62aff9ae65f0/389054a8-2a24-4e04-a765-567a9c1125a8/local_72477443-e409-4472-b726-79238a9a9cd1/outputs/miner_history_wireframe.html#" style="font-size:9px;color:#0f6e56;background:#e1f5ee;padding:3px 8px;border-radius:4px;text-decoration:none;display:inline-flex;align-items:center;gap:3px"><svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M7 3H3a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path><path d="M10 2h4v4M14 2L8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>View in Log Center</a></div></div></td></tr><tr style="background:#fff;cursor:pointer" onclick="prdToggleP2(1)"><td style="padding:7px 12px;font-size:10px;color:#9ca3af;border-bottom:1px solid #f3f4f6;white-space:nowrap">2026.05.06 13:48</td><td style="padding:7px 12px;font-size:11px;color:#111827;border-bottom:1px solid #f3f4f6">Reboot</td><td style="padding:7px 12px;border-bottom:1px solid #f3f4f6"><span style="color:#dc2626;font-size:10px">Failed</span></td><td style="padding:7px 12px;font-size:10px;color:#6b7280;border-bottom:1px solid #f3f4f6">0d 0h 0m 20s</td><td style="padding:7px 12px;font-size:11px;color:#6b7280;border-bottom:1px solid #f3f4f6">joshua.knight</td><td style="padding:7px 12px;border-bottom:1px solid #f3f4f6"><button onclick="event.stopPropagation();prdToggleP2(1)" style="font-size:10px;color:#14b8a6;border:1px solid #14b8a6;padding:3px 8px;border-radius:4px;background:#fff;cursor:pointer;font-family:inherit">View ▼</button></td></tr><tr style="background:#fff;cursor:pointer" onclick="prdToggleP2(2)"><td style="padding:7px 12px;font-size:10px;color:#9ca3af;border-bottom:1px solid #f3f4f6;white-space:nowrap">2025.11.20 08:45</td><td style="padding:7px 12px;font-size:11px;color:#111827;border-bottom:1px solid #f3f4f6">Configure pool</td><td style="padding:7px 12px;border-bottom:1px solid #f3f4f6"><span style="color:#16a34a;font-size:10px">Success</span></td><td style="padding:7px 12px;font-size:10px;color:#6b7280;border-bottom:1px solid #f3f4f6">0d 0h 0m 1s</td><td style="padding:7px 12px;font-size:11px;color:#6b7280;border-bottom:1px solid #f3f4f6">ezekiel.martin</td><td style="padding:7px 12px;border-bottom:1px solid #f3f4f6"><button onclick="event.stopPropagation();prdToggleP2(2)" style="font-size:10px;color:#14b8a6;border:1px solid #14b8a6;padding:3px 8px;border-radius:4px;background:#fff;cursor:pointer;font-family:inherit">View ▼</button></td></tr><tr style="background:#fff;cursor:pointer" onclick="prdToggleP2(3)"><td style="padding:7px 12px;font-size:10px;color:#9ca3af;border-bottom:1px solid #f3f4f6;white-space:nowrap">2026.01.15 09:30</td><td style="padding:7px 12px;font-size:11px;color:#111827;border-bottom:1px solid #f3f4f6">Location change</td><td style="padding:7px 12px;border-bottom:1px solid #f3f4f6"><span style="color:#16a34a;font-size:10px">Success</span></td><td style="padding:7px 12px;font-size:10px;color:#6b7280;border-bottom:1px solid #f3f4f6">—</td><td style="padding:7px 12px;font-size:11px;color:#6b7280;border-bottom:1px solid #f3f4f6">admin</td><td style="padding:7px 12px;border-bottom:1px solid #f3f4f6"><button onclick="event.stopPropagation();prdToggleP2(3)" style="font-size:10px;color:#14b8a6;border:1px solid #14b8a6;padding:3px 8px;border-radius:4px;background:#fff;cursor:pointer;font-family:inherit">View ▼</button></td></tr></tbody></table></div></div>
+      </div>
+    </div>
+
+    <!-- WF3 — Miner History · no miner selected (empty state) -->
+    <div id="prd-wf3" style="display: none; height: 560px; overflow: hidden;">
+      <div style="display:flex;height:100%">
+        <div style="width:150px;background:#111827;display:flex;flex-direction:column;flex-shrink:0;font-family:-apple-system,BlinkMacSystemFont,&#39;Segoe UI&#39;,sans-serif;">
+          <div style="padding:9px 12px;color:#14b8a6;font-size:12px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.07)">Lyra</div>
+          <div style="flex:1;padding:5px 0">
+            <div style="padding:4px 12px;font-size:9px;color:rgba(255,255,255,0.4)">⊞ Overview</div>
+            <div style="padding:4px 12px;font-size:9px;color:#fff;background:rgba(20,184,166,0.1);border-left:2px solid #14b8a6">⛏ Miner Management</div>
+            <div style="padding:4px 22px;font-size:9px;color:rgba(255,255,255,0.35)">Miner List</div>
+            <div style="padding:4px 22px;font-size:9px;color:rgba(255,255,255,0.35)">Rack View</div>
+            <div style="padding:4px 22px;font-size:9px;color:#14b8a6;border-left:2px solid #14b8a6">Miner History</div>
+            <div style="padding:4px 12px;font-size:9px;color:rgba(255,255,255,0.4)">⚠ Faults &amp; Statuses</div>
+            <div style="padding:4px 12px;font-size:9px;color:rgba(255,255,255,0.4)">🔧 Maintenance</div>
+            <div style="padding:4px 12px;font-size:9px;color:rgba(255,255,255,0.4)">☰ Activity Log</div>
+          </div>
+          <div style="padding:7px 12px;border-top:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;gap:5px">
+            <div style="width:20px;height:20px;border-radius:50%;background:#14b8a6;color:#fff;font-size:7px;font-weight:700;display:flex;align-items:center;justify-content:center">SA</div>
+            <div><div style="font-size:8px;color:rgba(255,255,255,0.6)">sean.ang</div><div style="font-size:7px;color:rgba(255,255,255,0.3)">Site Viewer</div></div>
+          </div>
+        </div>
+        <div style="flex:1;overflow-y:auto;padding:12px;background:#f3f4f6;font-family:-apple-system,BlinkMacSystemFont,&#39;Segoe UI&#39;,sans-serif">
+          <div style="font-size:15px;font-weight:600;color:#111827;margin-bottom:12px">Miner History</div>
+          <!-- Search bar — no miner selected -->
+          <div style="font-size:10px;color:#6b7280;margin-bottom:4px">Miner</div>
+          <div style="background:#fff;border:1px solid #14b8a6;border-radius:6px;padding:6px 10px;display:flex;align-items:center;gap:6px;margin-bottom:16px;box-shadow:0 0 0 2px rgba(20,184,166,0.12)">
+            <span style="color:#14b8a6;font-size:10px">🔍</span>
+            <span style="font-size:11px;color:#9ca3af;flex:1">Search by IP address or serial number…</span>
+          </div>
+          <!-- Recently viewed -->
+          <div style="font-size:10px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px">Recently viewed</div>
+          <div style="background:#fff;border:1px solid #e5e7eb;border-radius:7px;overflow:hidden">
+            <div style="display:flex;align-items:center;padding:9px 12px;border-bottom:1px solid #f3f4f6;cursor:pointer;gap:10px">
+              <div style="width:26px;height:26px;border-radius:4px;background:#e6f7f5;color:#14b8a6;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0">⛏</div>
+              <div style="flex:1">
+                <div style="font-size:11px;font-weight:600;color:#111827">10.1.1.1</div>
+                <div style="font-size:9px;color:#9ca3af;margin-top:1px">S151749261401293 · SealMiner A2 Pro · 248T · B01-D1-R01-Slot 1</div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-size:9px;color:#9ca3af">Last viewed</div>
+                <div style="font-size:9px;color:#374151;margin-top:1px">2 hours ago</div>
+              </div>
+              <span style="color:#14b8a6;font-size:10px;white-space:nowrap">View history →</span>
+            </div>
+            <div style="display:flex;align-items:center;padding:9px 12px;border-bottom:1px solid #f3f4f6;cursor:pointer;gap:10px">
+              <div style="width:26px;height:26px;border-radius:4px;background:#f3f4f6;color:#9ca3af;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0">⛏</div>
+              <div style="flex:1">
+                <div style="font-size:11px;font-weight:600;color:#111827">10.1.1.4</div>
+                <div style="font-size:9px;color:#9ca3af;margin-top:1px">S151761261401439 · SealMiner A2 Pro · 260T · B01-D1-R01-Slot 4</div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-size:9px;color:#9ca3af">Last viewed</div>
+                <div style="font-size:9px;color:#374151;margin-top:1px">Yesterday</div>
+              </div>
+              <span style="color:#14b8a6;font-size:10px;white-space:nowrap">View history →</span>
+            </div>
+            <div style="display:flex;align-items:center;padding:9px 12px;cursor:pointer;gap:10px">
+              <div style="width:26px;height:26px;border-radius:4px;background:#f3f4f6;color:#9ca3af;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0">⛏</div>
+              <div style="flex:1">
+                <div style="font-size:11px;font-weight:600;color:#111827">10.1.1.6</div>
+                <div style="font-size:9px;color:#9ca3af;margin-top:1px">S151761261401446 · SealMiner A2 Pro · 260T · B01-D1-R01-Slot 6</div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-size:9px;color:#9ca3af">Last viewed</div>
+                <div style="font-size:9px;color:#374151;margin-top:1px">3 days ago</div>
+              </div>
+              <span style="color:#14b8a6;font-size:10px;white-space:nowrap">View history →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+var prdDRT='hist',prdDRH='ops',prdDR='30d',prdP2T='ops',prdP2E=null;
+var prdMiners=[
+  {ip:'10.1.1.1',sn:'S151749261401293',model:'SealMiner · A2 Pro · 248T',loc:'B01-D1-R01-Slot 1',hl:true},
+  {ip:'10.1.1.2',sn:'S151755261500502',model:'SealMiner · A2 Pro · 254T',loc:'B01-D1-R01-Slot 2'},
+  {ip:'10.1.1.3',sn:'S151759261500131',model:'SealMiner · A2 Pro · 258T',loc:'B01-D1-R01-Slot 3'},
+  {ip:'10.1.1.4',sn:'S151761261401439',model:'SealMiner · A2 Pro · 260T',loc:'B01-D1-R01-Slot 4'},
+  {ip:'10.1.1.5',sn:'S151759261401489',model:'SealMiner · A2 Pro · 258T',loc:'B01-D1-R01-Slot 5'},
+  {ip:'10.1.1.6',sn:'S151761261401446',model:'SealMiner · A2 Pro · 260T',loc:'B01-D1-R01-Slot 6'},
+];
+var prdDrOps=[
+  {cls:'ops',tl:'Operation',action:'Reboot',by:'ezekiel.martin',date:'2026.04.30 19:25',ok:true},
+  {cls:'ops',tl:'Movement',action:'R02-Slot 12 → R01-Slot 1',by:'system',date:'2026.01.15 09:30',ok:false},
+  {cls:'ops',tl:'Operation',action:'Configure pool',by:'ezekiel.martin',date:'2025.11.20 08:45',ok:true},
+];
+var prdDrMaint=[
+  {cls:'maint',tl:'Maintenance',action:'Change HB1, remove HB2, reflash',by:'John',date:'2026.02.18 11:23',ok:true},
+  {cls:'maint',tl:'Maintenance',action:'Change power supply',by:'Bruce',date:'2025.12.18 14:03',ok:true},
+];
+var prdP2Ops=[
+  {id:0,action:'Reboot',by:'ezekiel.martin',date:'2026.04.30 19:25',result:'Success',duration:'0d 0h 0m 4s',
+   detail:{type:'ops',opId:'OP-20260430-0041',fields:[['Triggered by','Manual'],['Exit code','0'],['Previous uptime','14d 3h']]}},
+  {id:1,action:'Reboot',by:'joshua.knight',date:'2026.05.06 13:48',result:'Failed',duration:'0d 0h 0m 20s',
+   detail:{type:'ops',opId:'OP-20260506-0312',fields:[['Triggered by','Manual'],['Exit code','1'],['Previous uptime','2d 1h']],
+   failure:'Post "http://10.1.1.1/cgi-bin/login.php": context deadline exceeded (Client.Timeout exceeded while awaiting headers)'}},
+  {id:2,action:'Configure pool',by:'ezekiel.martin',date:'2025.11.20 08:45',result:'Success',duration:'0d 0h 0m 1s',
+   detail:{type:'ops',opId:'OP-20251120-7821',fields:[['Pool URL','pool.bitdeer.com:3333'],['Worker','worker_412'],['Algorithm','SHA-256'],['Backup pool','—']]}},
+  {id:3,action:'Location change',by:'admin',date:'2026.01.15 09:30',result:'Success',duration:'—',
+   detail:{type:'move',opId:'OP-20260115-0312',from:{loc:'B01-D1-R02-Slot 12',ip:'10.1.2.12'},to:{loc:'B01-D1-R01-Slot 1',ip:'10.1.1.1'},reason:'Rack rebalance',auth:'admin'}},
+];
+var prdP2Maint=[
+  {id:10,action:'Change HB1 · Remove HB2 · Reflash',by:'John',created:'2026.02.18 11:23',updated:'2026.02.19 10:23',
+   detail:{type:'maint',maintId:'MR-20260218-0041',
+     device:[['IP','10.1.1.1'],['MAC','50:d4:48:4f:20:b6'],['Serial','S151749261401293'],['Brand','SealMiner'],['Type','A2 Pro'],['Model','248T']],
+     sections:[
+       {icon:'⊞',title:'Hash board',items:[
+         {label:'Hashboard 1',op:'Change hashboard',rows:[['Removed SN','HB3-BC3E253901443000005'],['New SN','HB3-BC3E255107420000005'],['QR code','QR-HB3-255107']]},
+         {label:'Hashboard 2',op:'Remove hashboard',rows:[['Removed SN','HB2-AA1E253901440000018']]}
+       ]},
+       {icon:'···',title:'Other options',flags:['Reflashed']}
+     ],by:'John',created:'2026.02.18 11:23',updated:'2026.02.19 10:23',
+     comments:'HB2 fully dead, ordered replacement. Reflash completed OK.'}},
+  {id:11,action:'Add power supply · Change miner\'s fan 1',by:'Bruce',created:'2025.12.18 14:03',updated:'2025.12.19 14:03',
+   detail:{type:'maint',maintId:'MR-20251218-0187',
+     device:[['IP','10.1.1.1'],['MAC','50:d4:48:4f:20:b6'],['Serial','S151749261401293'],['Brand','SealMiner'],['Type','A2 Pro'],['Model','248T']],
+     sections:[
+       {icon:'🔌',title:'Power supply',items:[
+         {label:'Power supply',op:'Add power supply',rows:[['New SN','BC3E255107420H43000005']]}
+       ]},
+       {icon:'💨',title:'Fans',items:[
+         {label:"Miner's fan 1",op:'Changed',rows:[]}
+       ]}
+     ],by:'Bruce',created:'2025.12.18 14:03',updated:'2025.12.19 14:03',
+     comments:null}},
+  {id:12,action:'Add hashboard 2 · Replace control board',by:'Albert',created:'2025.10.21 13:43',updated:'2025.10.22 09:13',
+   detail:{type:'maint',maintId:'MR-20251021-0093',
+     device:[['IP','10.1.1.1'],['MAC','50:d4:48:4f:20:b6'],['Serial','S151749261401293'],['Brand','SealMiner'],['Type','A2 Pro'],['Model','248T']],
+     sections:[
+       {icon:'⊞',title:'Hash board',items:[
+         {label:'Hashboard 2',op:'Add hashboard',rows:[['New SN','HB2-AA1E253901440000099'],['QR code','QR-HB2-253901099']]}
+       ]},
+       {icon:'🖥',title:'Control board',items:[
+         {label:'Control board',op:'Change control board',rows:[['Removed SN','CB-AA1E253901440000031'],['New SN','CB-AA1E255107420000044']]}
+       ]}
+     ],by:'Albert',created:'2025.10.21 13:43',updated:'2025.10.22 09:13',
+     comments:'Miner was running on 2 boards only. Third slot now occupied.'}},
+];
+
+function prdShowWF(n){
+  document.getElementById('prd-wf1').style.display=n===1?'flex':'none';
+  document.getElementById('prd-wf2').style.display=n===2?'block':'none';
+  document.getElementById('prd-wf3').style.display=n===3?'block':'none';
+  ['wb1','wb2','wb3'].forEach(function(b,i){
+    var el=document.getElementById('prd-'+b);if(!el)return;
+    el.style.background=(n===i+1)?'#111827':'#f9fafb';
+    el.style.color=(n===i+1)?'#fff':'#6b7280';
+  });
+}
+function prdRenderW1Rows(){
+  var el=document.getElementById('prd-w1rows');
+  if(!el)return;
+  el.innerHTML=prdMiners.map(function(m){
+    return '<tr style="background:'+(m.hl?'#f0fdfa':'#fff')+'">'
+      +'<td style="padding:4px 8px"><input type="checkbox" style="accent-color:#14b8a6"'+(m.hl?' checked':'')+'></td>'
+      +'<td style="padding:4px 8px;font-size:9px"><a style="color:#14b8a6">'+m.ip+'</a></td>'
+      +'<td style="padding:4px 8px;font-size:8px;color:#9ca3af">'+m.sn+'</td>'
+      +'<td style="padding:4px 8px;font-size:9px">'+m.model+'</td>'
+      +'<td style="padding:4px 8px;font-size:9px">'+m.loc+'</td>'
+      +'<td style="padding:4px 8px;font-size:9px"><span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#22c55e;margin-right:2px;vertical-align:middle"></span>Online</td>'
+      +'<td style="padding:4px 8px;font-size:9px"><span style="color:#14b8a6;cursor:pointer;margin-right:3px">View</span><span style="color:#9ca3af;cursor:pointer">···</span></td>'
+      +'</tr>';
+  }).join('');
+}
+function prdDrSetTab(t){
+  prdDRT=t;
+  document.querySelectorAll('.prd-drt').forEach(function(el){
+    el.style.color=el.dataset.t===t?'#14b8a6':'#9ca3af';
+    el.style.borderBottom=el.dataset.t===t?'2px solid #14b8a6':'2px solid transparent';
+    el.style.fontWeight=el.dataset.t===t?'500':'400';
+  });
+  prdRenderDrBody();
+}
+function prdDrSetFilter(f){prdDRH=f;prdRenderDrBody();}
+function prdRenderDrTabs(){
+  var el=document.getElementById('prd-drtabs');
+  if(!el)return;
+  var tabs=[{k:'bi',l:'Overview'},{k:'hist',l:'History'}];
+  el.innerHTML=tabs.map(function(t){
+    var active=prdDRT===t.k;
+    return '<div class="prd-drt" data-t="'+t.k+'" onclick="prdDrSetTab(\''+t.k+'\')" style="padding:7px 9px;font-size:10px;color:'+(active?'#14b8a6':'#9ca3af')+';cursor:pointer;border-bottom:'+(active?'2px solid #14b8a6':'2px solid transparent')+';white-space:nowrap;font-weight:'+(active?'500':'400')+'">'+t.l+'</div>';
+  }).join('')+'<div style="padding:7px 8px;font-size:10px;color:#9ca3af;margin-left:auto">···</div>';
+}
+function prdRenderDrBody(){
+  var el=document.getElementById('prd-drbody');
+  if(!el)return;
+  if(prdDRT==='bi'){el.innerHTML=prdBiHTML();}
+  else{el.innerHTML=prdDrHistHTML();}
+}
+function prdBiHTML(){
+  return '<div style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-family:inherit">'
+    +[['IP Address','10.1.1.1'],['Serial Number','S151749261401293'],['MAC Address','50:d4:48:4f:20:b6'],['Brand, Type & Model','SealMiner · A2 Pro · 248T'],['Location','B01-D1-R01-Slot 1'],['Owner','Bitdeer'],['Detection Status','● Online'],['Config Status','Configured'],['Operation Status','In service'],['Work Mode','Normal']]
+    .map(function(r){return '<div style="display:flex;justify-content:space-between;padding:2px 0;font-size:10px"><span style="color:#9ca3af">'+r[0]+'</span><span style="color:#111827">'+r[1]+'</span></div>';}).join('')+'</div>'
+    +'<div style="display:flex;justify-content:space-between;padding:7px 12px;border-top:1px solid #f3f4f6"><span style="font-size:9px;color:#6b7280;cursor:pointer;padding:3px 6px;border:1px solid #e5e7eb;border-radius:3px">‹ Previous</span><span style="font-size:9px;color:#6b7280;cursor:pointer;padding:3px 6px;border:1px solid #e5e7eb;border-radius:3px">Next ›</span></div>';
+}
+function prdDrHistHTML(){
+  var evts=prdDRH==='ops'?prdDrOps:prdDrMaint;
+  var chips='<div style="display:flex;gap:4px;padding:6px 12px;border-bottom:1px solid #f3f4f6">'
+    +'<span onclick="prdDrSetFilter(\'ops\')" style="font-size:9px;padding:2px 9px;border-radius:20px;border:1px solid '+(prdDRH==='ops'?'#14b8a6':'#d1d5db')+';cursor:pointer;color:'+(prdDRH==='ops'?'#fff':'#6b7280')+';background:'+(prdDRH==='ops'?'#14b8a6':'#fff')+'">Operations</span>'
+    +'<span onclick="prdDrSetFilter(\'maint\')" style="font-size:9px;padding:2px 9px;border-radius:20px;border:1px solid '+(prdDRH==='maint'?'#14b8a6':'#d1d5db')+';cursor:pointer;color:'+(prdDRH==='maint'?'#fff':'#6b7280')+';background:'+(prdDRH==='maint'?'#14b8a6':'#fff')+'">Maintenance</span>'
+    +'</div>';
+  var rows=evts.map(function(e){
+    var bStyle=e.cls==='ops'?'background:#dbeafe;color:#1e40af':'background:#fef9c3;color:#854d0e';
+    return '<div style="padding:7px 12px;border-bottom:1px solid #f3f4f6;cursor:pointer;font-family:inherit">'
+      +'<div style="display:flex;align-items:center;gap:4px"><span style="font-size:9px;padding:1px 6px;border-radius:20px;font-weight:500;'+bStyle+'">'+e.tl+'</span><span style="font-size:10px;color:#111827;flex:1">'+e.action+'</span>'+(e.ok?'<span style="font-size:9px;color:#16a34a">✓</span>':'<span style="font-size:9px;color:#9ca3af">—</span>')+'</div>'
+      +'<div style="font-size:9px;color:#9ca3af;margin-top:2px">'+e.date+' · '+e.by+'</div>'
+      +'</div>';
+  }).join('');
+  return chips+rows+'<a style="display:block;text-align:center;padding:8px 12px;border-top:1px solid #f3f4f6;color:#14b8a6;font-size:10px;cursor:pointer;text-decoration:none">View full history →</a>';
+}
+function prdSetDR(r){
+  prdDR=r;
+  document.querySelectorAll('.prd-drp').forEach(function(el){
+    var active=el.dataset.r===r;
+    el.style.background=active?'#fff':'#f3f4f6';
+    el.style.color=active?'#14b8a6':'#6b7280';
+    el.style.fontWeight=active?'500':'400';
+  });
+}
+function prdRenderP2Header(){
+  var el=document.getElementById('prd-p2thead');
+  if(!el)return;
+  var th=function(s){return '<th style="padding:6px 12px;text-align:left;color:#9ca3af;font-weight:500;border-bottom:1px solid #e5e7eb;font-size:10px">'+s+'</th>';};
+  el.innerHTML='<tr style="background:#f9fafb">'+(prdP2T==='ops'
+    ?th('Start time')+th('Operation')+th('Result')+th('Duration')+th('Operator')+th('Actions')
+    :th('Created time')+th('Updated time')+th('Details')+th('Technician')+th('Actions'))+'</tr>';
+}
+function prdSetP2T(t){
+  prdP2T=t;prdP2E=null;
+  document.querySelectorAll('.prd-pgt').forEach(function(el){
+    var active=el.dataset.t===t;
+    el.style.color=active?'#14b8a6':'#9ca3af';
+    el.style.borderBottom=active?'2px solid #14b8a6':'2px solid transparent';
+    el.style.fontWeight=active?'500':'400';
+  });
+  prdRenderP2Header();
+  prdRenderP2Table();
+}
+function prdToggleP2(id){prdP2E=(prdP2E===id)?null:id;prdRenderP2Table();}
+function prdRenderHP(){
+  var el=document.getElementById('prd-hp');
+  if(!el)return;
+  el.innerHTML='<div style="font-size:15px;font-weight:600;color:#111827;margin-bottom:12px;font-family:inherit">Miner History</div>'
+    +'<div style="font-size:10px;color:#6b7280;margin-bottom:4px;font-family:inherit">Miner</div>'
+    +'<div style="background:#fff;border:1px solid #e5e7eb;border-radius:6px;padding:6px 10px;display:flex;align-items:center;gap:6px;margin-bottom:7px;font-family:inherit">'
+    +'<span style="color:#d1d5db;font-size:10px">🔍</span>'
+    +'<span style="font-size:11px;color:#d1d5db;flex:1">Search by IP address or serial number…</span>'
+    +'</div>'
+    +'<div style="background:#fff;border:1px solid #d1fae5;border-radius:6px;padding:7px 10px;display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;font-family:inherit">'
+    +'<div style="display:flex;align-items:center;gap:8px">'
+    +'<div style="width:28px;height:28px;border-radius:5px;background:#e6f7f5;color:#14b8a6;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0">⛏</div>'
+    +'<div><div style="font-size:12px;font-weight:600;color:#111827">10.1.1.1</div>'
+    +'<div style="font-size:9px;color:#9ca3af;margin-top:1px">S151749261401293 · SealMiner A2 Pro · 248T · B01-D1-R01-Slot 1</div></div>'
+    +'</div>'
+    +'<span style="color:#9ca3af;font-size:14px;cursor:pointer;line-height:1">×</span>'
+    +'</div>'
+    +'<div style="font-size:10px;color:#6b7280;margin-bottom:4px;font-family:inherit">Date range</div>'
+    +'<div style="display:flex;gap:0;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;background:#f3f4f6;width:fit-content;margin-bottom:10px" id="prd-drpills">'
+    +[{k:'24h',l:'Last 24 hours'},{k:'7d',l:'Last 7 days'},{k:'30d',l:'Last 30 days'},{k:'custom',l:'Custom'}].map(function(o){
+      var active=prdDR===o.k;
+      return '<span class="prd-drp" data-r="'+o.k+'" onclick="prdSetDR(\''+o.k+'\')" style="padding:5px 11px;font-size:11px;cursor:pointer;color:'+(active?'#14b8a6':'#6b7280')+';border-right:1px solid #e5e7eb;background:'+(active?'#fff':'#f3f4f6')+';font-weight:'+(active?'500':'400')+';font-family:inherit">'+o.l+'</span>';
+    }).join('')+'</div>'
+    +'<div style="display:flex;border-bottom:1px solid #e5e7eb;background:#fff;border-radius:7px 7px 0 0;overflow:hidden;border:1px solid #e5e7eb;border-bottom:none" id="prd-pgtabs">'
+    +[{k:'ops',l:'Operations'},{k:'maint',l:'Maintenance'}].map(function(t){
+      var active=prdP2T===t.k;
+      return '<div class="prd-pgt" data-t="'+t.k+'" onclick="prdSetP2T(\''+t.k+'\')" style="padding:8px 16px;font-size:11px;color:'+(active?'#14b8a6':'#9ca3af')+';cursor:pointer;border-bottom:'+(active?'2px solid #14b8a6':'2px solid transparent')+';font-weight:'+(active?'500':'400')+';font-family:inherit">'+t.l+'</div>';
+    }).join('')+'</div>'
+    +'<div style="background:#fff;border:1px solid #e5e7eb;border-radius:0 7px 7px 7px;overflow:hidden">'
+    +'<div style="display:flex;align-items:center;justify-content:flex-end;padding:5px 12px;border-bottom:1px solid #f3f4f6"><button style="font-size:10px;padding:3px 10px;border:1px solid #d1d5db;border-radius:4px;background:#fff;color:#374151;cursor:pointer;font-family:inherit">Export CSV</button></div>'
+    +'<table style="width:100%;border-collapse:collapse" id="prd-p2tbl"><thead id="prd-p2thead"></thead><tbody id="prd-p2body"></tbody></table></div>';
+  prdRenderP2Header();
+  prdRenderP2Table();
+}
+function prdRenderP2Table(){
+  var el=document.getElementById('prd-p2body');
+  if(!el)return;
+  var isOps=prdP2T==='ops';
+  var evts=isOps?prdP2Ops:prdP2Maint;
+  var colSpan=isOps?6:5;
+  el.innerHTML=evts.map(function(e){
+    var isE=prdP2E===e.id;
+    var resultVal=isOps?e.result:e.status;
+    var statusCol=resultVal==='Success'||resultVal==='Fixed'
+      ?'<span style="color:#16a34a;font-size:10px">'+resultVal+'</span>'
+      :resultVal==='Failed'
+        ?'<span style="color:#dc2626;font-size:10px">'+resultVal+'</span>'
+        :'<span style="color:#9ca3af;font-size:10px">'+resultVal+'</span>';
+    var row='<tr style="background:'+(isE?'#f0fdfa':'#fff')+';cursor:pointer" onclick="prdToggleP2('+e.id+')">'
+      +(isOps
+        ?'<td style="padding:7px 12px;font-size:10px;color:#9ca3af;border-bottom:1px solid #f3f4f6;white-space:nowrap">'+e.date+'</td>'
+        :'<td style="padding:7px 12px;font-size:10px;color:#9ca3af;border-bottom:1px solid #f3f4f6;white-space:nowrap">'+e.created+'</td>'
+         +'<td style="padding:7px 12px;font-size:10px;color:#9ca3af;border-bottom:1px solid #f3f4f6;white-space:nowrap">'+e.updated+'</td>'
+      )
+      +'<td style="padding:7px 12px;font-size:11px;color:#111827;border-bottom:1px solid #f3f4f6">'+e.action+'</td>'
+      +(isOps?'<td style="padding:7px 12px;border-bottom:1px solid #f3f4f6">'+statusCol+'</td>':'')
+      +(isOps?'<td style="padding:7px 12px;font-size:10px;color:#6b7280;border-bottom:1px solid #f3f4f6">'+e.duration+'</td>':'')
+      +'<td style="padding:7px 12px;font-size:11px;color:#6b7280;border-bottom:1px solid #f3f4f6">'+e.by+'</td>'
+      +'<td style="padding:7px 12px;border-bottom:1px solid #f3f4f6"><button onclick="event.stopPropagation();prdToggleP2('+e.id+')" style="font-size:10px;color:'+(isE?'#fff':'#14b8a6')+';border:1px solid #14b8a6;padding:3px 8px;border-radius:4px;background:'+(isE?'#14b8a6':'#fff')+';cursor:pointer;font-family:inherit">'+(isE?'Close ▲':'View ▼')+'</button></td>'
+      +'</tr>';
+    if(isE) row+='<tr><td colspan="'+colSpan+'" style="padding:0;background:#f8fffe;border-bottom:1px solid #a7f3d0">'+prdBuildExp(e.detail)+'</td></tr>';
+    return row;
+  }).join('');
+}
+function prdBuildExp(d){
+  var h='<div style="padding:12px 16px;border-top:1px solid #99f6e4;font-family:inherit">';
+  if(d.type==='maint'){
+    var fixHTML=d.sections.map(function(s){
+      if(s.flags)return ''; // skip Other options
+      var itemsHTML='';
+      if(s.items){
+        itemsHTML=s.items.map(function(it){
+          var newSn=it.rows.filter(function(r){return r[0]==='New SN';});
+          return '<div style="background:#fff;border:1px solid #e5e7eb;border-radius:4px;border-left:3px solid #14b8a6;padding:6px 8px;margin-bottom:4px">'
+            +'<div style="font-size:10px;font-weight:500;color:#111827;margin-bottom:2px">'+it.label+'</div>'
+            +'<div style="font-size:9px;color:#14b8a6;margin-bottom:'+(newSn.length?'4px':'0')+'">'+it.op+'</div>'
+            +newSn.map(function(r){return '<div style="font-size:9px;color:#6b7280;padding:1px 0"><strong style="color:#374151;font-weight:500">New SN:</strong> '+r[1]+'</div>';}).join('')
+            +'</div>';
+        }).join('');
+      }
+      return '<div style="margin-bottom:8px">'
+        +'<div style="display:flex;align-items:center;gap:5px;font-size:10px;font-weight:600;color:#374151;margin-bottom:5px;padding-bottom:4px;border-bottom:1px solid #f3f4f6">'
+        +'<span style="font-size:11px">'+s.icon+'</span>'+s.title+'</div>'
+        +itemsHTML+'</div>';
+    }).join('');
+    h+='<div>'
+      +'<div style="font-size:9px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.4px;margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid #e5e7eb">Fix details</div>'
+      +fixHTML
+      +(d.maintId?'<div style="margin-top:4px;padding-top:7px;border-top:1px solid #e5e7eb;display:flex;align-items:center;gap:8px"><span style="font-size:9px;color:#9ca3af;font-family:monospace">'+d.maintId+'</span><a href="#" style="font-size:9px;color:#0f6e56;background:#e1f5ee;padding:3px 8px;border-radius:4px;text-decoration:none;display:inline-flex;align-items:center;gap:3px"><svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M7 3H3a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2L8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>View maintenance record</a></div>':'')
+      +'</div>';
+  } else if(d.type==='move'){
+    h+='<div style="font-size:9px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.4px;margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid #e5e7eb">Location change</div>'
+      +'<div style="display:flex;align-items:center;gap:6px;margin:4px 0">'
+      +'<div style="flex:1;background:#fff;border:1px solid #e5e7eb;border-radius:3px;padding:5px 7px"><div style="font-size:8px;color:#9ca3af">From</div><div style="font-size:10px;font-weight:500;color:#111827;margin-top:1px">'+d.from.loc+'</div><div style="font-size:9px;color:#9ca3af">'+d.from.ip+'</div></div>'
+      +'<span style="color:#d1d5db;font-size:12px">→</span>'
+      +'<div style="flex:1;background:#fff;border:1px solid #e5e7eb;border-radius:3px;padding:5px 7px"><div style="font-size:8px;color:#9ca3af">To</div><div style="font-size:10px;font-weight:500;color:#111827;margin-top:1px">'+d.to.loc+'</div><div style="font-size:9px;color:#9ca3af">'+d.to.ip+'</div></div></div>'
+      +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;padding:4px 0;margin-top:4px">'
+      +'<div><div style="font-size:9px;color:#9ca3af">Reason</div><div style="font-size:10px;color:#111827;margin-top:1px">'+d.reason+'</div></div>'
+      +'<div><div style="font-size:9px;color:#9ca3af">Authorised by</div><div style="font-size:10px;color:#111827;margin-top:1px">'+d.auth+'</div></div></div>'
+      +(d.opId?'<div style="margin-top:8px;padding-top:7px;border-top:1px solid #e5e7eb;display:flex;align-items:center;gap:8px"><span style="font-size:9px;color:#9ca3af;font-family:monospace">'+d.opId+'</span><a href="#" style="font-size:9px;color:#0f6e56;background:#e1f5ee;padding:3px 8px;border-radius:4px;text-decoration:none;display:inline-flex;align-items:center;gap:3px"><svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M7 3H3a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2L8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>View in Log Center</a></div>':'');
+  } else {
+    h+='<div style="font-size:9px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.4px;margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid #e5e7eb">Details</div>'
+      +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 14px">'+d.fields.map(function(r){return '<div><div style="font-size:9px;color:#9ca3af">'+r[0]+'</div><div style="font-size:10px;color:#111827;margin-top:1px">'+r[1]+'</div></div>';}).join('')+'</div>'
+      +(d.failure?'<div style="margin-top:8px;padding:7px 9px;background:#fef2f2;border:1px solid #fecaca;border-radius:4px"><div style="font-size:9px;font-weight:600;color:#991b1b;margin-bottom:3px">Failure reason</div><div style="font-size:9px;color:#7f1d1d;font-family:monospace;word-break:break-all;line-height:1.5">'+d.failure+'</div></div>':'')
+      +(d.opId?'<div style="margin-top:8px;padding-top:7px;border-top:1px solid #e5e7eb;display:flex;align-items:center;gap:8px"><span style="font-size:9px;color:#9ca3af;font-family:monospace">'+d.opId+'</span><a href="#" style="font-size:9px;color:#0f6e56;background:#e1f5ee;padding:3px 8px;border-radius:4px;text-decoration:none;display:inline-flex;align-items:center;gap:3px"><svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M7 3H3a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2h4v4M14 2L8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>View in Log Center</a></div>':'');
+  }
+  return h+'</div>';
+}
+
+prdRenderW1Rows();
+prdRenderDrTabs();
+prdDrSetTab('hist');
+prdRenderHP();
+</script>
+
+
+</body></html>
