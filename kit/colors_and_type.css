@@ -1,0 +1,130 @@
+/* ==========================================================================
+   Lyra PC Design System — Colors & Type
+   Source of truth: Figma "Lyra Design System.fig"
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
+
+/* Poppins — local brand files (uploaded).
+   NOTE: paths are relative to THIS file (colors_and_type.css at project root).
+   When @import'd from a subfolder, the browser correctly resolves relative to this file. */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('./fonts/Poppins-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./fonts/Poppins-Bold.ttf') format('truetype');
+}
+
+:root {
+  /* ---------- ACCENT / BRAND ---------- */
+  /* Primary — Lyra green (主品牌色, 用于主体元素: 文字、按钮、背景色块) */
+  --lyra-primary-strong: #3BB78F;   /* rgb(59,183,143) */
+  --lyra-primary-pale:   #E6FAEF;
+  --lyra-primary-grad-a: #36D0AC;
+  --lyra-primary-grad-b: #50E985;
+  --lyra-primary-gradient: linear-gradient(180deg, #36D0AC 0%, #50E985 100%);
+  --lyra-primary-shadow: 0 6px 16px rgba(59,183,143,0.30), 0 2px 6px rgba(59,183,143,0.16);
+
+  /* Secondary — Lyra orange */
+  --lyra-secondary-strong: #F76B1C;
+  --lyra-secondary-pale:   #FCF5E3;
+  --lyra-secondary-grad-a: #F87C27;
+  --lyra-secondary-grad-b: #FAB44A;
+  --lyra-secondary-gradient: linear-gradient(180deg, #F87C27 0%, #FAB44A 100%);
+
+  /* ---------- NEUTRAL — FOREGROUND (text & icons) ---------- */
+  --fg-1st:         #121118;   /* rgb(18,17,24)  — headlines, primary text */
+  --fg-2nd:         #59595D;   /* secondary */
+  --fg-3rd:         #A0A0A3;   /* weak text, captions */
+  --fg-4th:         #CDCDD1;   /* input placeholder, disabled */
+  --fg-inverse-1st: #FFFFFF;   /* on dark */
+  --fg-inverse-2nd: rgba(255,255,255,0.60);
+  --fg-inverse-3rd: rgba(255,255,255,0.30);
+
+  /* ---------- NEUTRAL — BACKGROUND ---------- */
+  --bg-1st:         #FFFFFF;
+  --bg-2nd:         #F6F6F6;   /* page bg */
+  --bg-3rd:         #EBECED;   /* disabled */
+  --bg-inverse-1st: #25252F;   /* rgb(37,37,47) — side menu, dark cards */
+
+  /* ---------- LINE / BORDER ---------- */
+  --line-1st:         #EEEEEE;    /* dividers, card borders */
+  --line-2nd:         #D0D5DD;    /* inputs, checkboxes */
+  --line-inverse-1st: rgba(255,255,255,0.10);
+
+  /* ---------- OVERLAY ---------- */
+  --overlay-1st:      rgba(0,0,0,0.50);
+  --overlay-2nd:      rgba(0,0,0,0.70);
+
+  /* ---------- SEMANTIC ---------- */
+  --sem-positive-strong: #3BB78F; --sem-positive-pale: #E6FAEF;
+  --sem-cautious-strong: #F76B1C; --sem-cautious-pale: #FCF5E3;
+  --sem-negative-strong: #FF0000; --sem-negative-pale: #FEF2F1;
+  --sem-moderate-strong: #1870F3; --sem-moderate-pale: #EEF5FF;
+  --sem-insightful-strong: #B71CFF; --sem-insightful-pale: #F7EFFF;
+  --sem-attentive-strong: #F9DE71;  --sem-attentive-pale:  #F9F6CD;
+
+  /* ---------- RADII ---------- */
+  --radius-2:  2px;   /* xs: micro */
+  --radius-4:  4px;   /* chip small */
+  --radius-6:  6px;   /* button S */
+  --radius-8:  8px;   /* button M, chip, swatch */
+  --radius-10: 10px;  /* button L */
+  --radius-12: 12px;  /* anchor, dialog, dropdown, popover, section card */
+
+  /* ---------- SHADOWS ---------- */
+  --shadow-card:    0 1px 2px rgba(18,17,24,0.05), 0 4px 12px rgba(18,17,24,0.08);
+  --shadow-popover: 0 8px 24px rgba(18,17,24,0.12), 0 2px 6px rgba(18,17,24,0.06);
+  --shadow-dialog:  0 24px 48px rgba(18,17,24,0.18), 0 4px 12px rgba(18,17,24,0.10);
+
+  /* ---------- SPACING ---------- */
+  --sp-4: 4px;  --sp-6: 6px;  --sp-8: 8px;  --sp-12: 12px;
+  --sp-16: 16px; --sp-20: 20px; --sp-24: 24px; --sp-32: 32px;
+  --sp-40: 40px; --sp-48: 48px;
+
+  /* ---------- FONT FAMILIES ---------- */
+  --font-title:  "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body:   "Roboto", "Inter", system-ui, -apple-system, Segoe UI, sans-serif;
+  --font-number: "Inter", "SF Pro Display", "SF Pro", "Helvetica Neue", sans-serif;
+  --font-brand:  "Poppins", "Inter", sans-serif;
+  --font-cjk:    "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+
+  /* ---------- TYPE TOKENS (semantic) ---------- */
+  --title-24: 700 24px/28px var(--font-title);
+  --title-20: 700 20px/24px var(--font-title);
+  --title-16: 700 16px/20px var(--font-body);
+  --title-14: 500 14px/20px var(--font-body);
+  --title-12: 500 12px/16px var(--font-body);
+
+  --text-14:  400 14px/20px var(--font-body);
+  --text-12:  400 12px/16px var(--font-body);
+  --text-10:  400 10px/14px var(--font-body);
+
+  --number-28: 500 28px/34px var(--font-number);
+  --number-20: 500 20px/24px var(--font-number);
+
+  /* ---------- TIMING ---------- */
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+  --dur-fast: 120ms;
+  --dur-med:  200ms;
+}
+
+/* ============ BASE ============ */
+html { font-family: var(--font-body); color: var(--fg-1st); background: var(--bg-2nd); }
+body { margin: 0; font: var(--text-14); color: var(--fg-1st); }
+
+h1 { font: var(--title-24); margin: 0 0 var(--sp-8); }
+h2 { font: var(--title-20); margin: 0 0 var(--sp-8); }
+h3 { font: var(--title-16); margin: 0 0 var(--sp-4); }
+h4 { font: var(--title-14); margin: 0; color: var(--fg-2nd); text-transform: uppercase; letter-spacing: 0.04em; }
+p  { font: var(--text-14); margin: 0 0 var(--sp-8); }
+small { font: var(--text-12); color: var(--fg-3rd); }
+code { font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace; font-size: 12px; background: var(--bg-2nd); padding: 2px 6px; border-radius: 4px; }
