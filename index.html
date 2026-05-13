@@ -3,46 +3,108 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Miner History — Lyra</title>
+<title>View Miner — Lyra</title>
 <link rel="stylesheet" href="kit/styles.css">
-<style>
-  body { background: var(--bg-2nd); margin: 0; font-family: var(--font-body, system-ui); }
-  .wrap { max-width: 720px; margin: 80px auto; padding: 0 24px; }
-  h1 { font: 700 32px/38px var(--font-title); color: var(--fg-1st); letter-spacing: -0.01em; margin: 0 0 8px; }
-  p.lede { font: 400 15px/24px var(--font-body); color: var(--fg-3rd); margin: 0 0 32px; max-width: 560px; }
-  .grid { display: grid; gap: 12px; }
-  a.card {
-    display: block; text-decoration: none;
-    background: #fff; border: 1px solid var(--line-1st); border-radius: 12px;
-    padding: 20px 24px; color: inherit;
-    transition: all 120ms ease;
-  }
-  a.card:hover { border-color: var(--lyra-primary-strong); box-shadow: 0 4px 12px rgba(18,17,24,0.06); }
-  .card h2 { font: 600 16px/22px var(--font-body); color: var(--fg-1st); margin: 0 0 4px; }
-  .card p  { font: 400 13px/20px var(--font-body); color: var(--fg-3rd); margin: 0; }
-  .label { font: 500 11px/14px var(--font-body); color: var(--fg-3rd); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 16px; }
-</style>
+<link rel="stylesheet" href="history.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 </head>
 <body>
-<script src="wireframe-nav.js"></script>
-<div class="wrap">
-  <div class="label">Lyra · Miner Management</div>
-  <h1>Miner History</h1>
-  <p class="lede">A per-miner lifecycle view on Lyra. Three surfaces preview the feature across its main entry points.</p>
-  <div class="grid">
-    <a class="card" href="full-page.html">
-      <h2>Full page →</h2>
-      <p>Dedicated Miner History page with Operations and Maintenance tabs, expandable rows and date filtering.</p>
-    </a>
-    <a class="card" href="drawer.html">
-      <h2>Drawer (Miner List context) →</h2>
-      <p>The History tab inside the View drawer — opened from the Miner List, last ~10 events.</p>
-    </a>
-    <a class="card" href="empty.html">
-      <h2>Empty state (menu entry) →</h2>
-      <p>Entered from the menu without a miner selected. Search input plus recently viewed.</p>
-    </a>
-  </div>
-</div>
+<template id="__bundler_thumbnail" data-bg-color="#f4f5f7">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#f4f5f7"/>
+    <rect x="80" y="120" width="1040" height="80" rx="12" fill="#ffffff" stroke="#e5e7eb"/>
+    <circle cx="130" cy="160" r="20" fill="#d1fae5"/>
+    <rect x="170" y="142" width="240" height="14" rx="4" fill="#111827"/>
+    <rect x="170" y="166" width="380" height="10" rx="3" fill="#9ca3af"/>
+    <rect x="80" y="230" width="1040" height="500" rx="12" fill="#ffffff" stroke="#e5e7eb"/>
+    <rect x="110" y="260" width="120" height="14" rx="3" fill="#10b981"/>
+    <rect x="260" y="260" width="120" height="14" rx="3" fill="#9ca3af"/>
+    <line x1="110" y1="300" x2="1090" y2="300" stroke="#e5e7eb"/>
+    <g fill="#9ca3af">
+      <rect x="110" y="330" width="100" height="10" rx="3"/>
+      <rect x="260" y="330" width="180" height="10" rx="3"/>
+      <rect x="490" y="330" width="80" height="10" rx="3"/>
+      <rect x="620" y="330" width="120" height="10" rx="3"/>
+    </g>
+    <line x1="110" y1="370" x2="1090" y2="370" stroke="#f3f4f6"/>
+    <g fill="#9ca3af">
+      <rect x="110" y="400" width="100" height="10" rx="3"/>
+      <rect x="260" y="400" width="220" height="10" rx="3"/>
+      <rect x="490" y="400" width="80" height="10" rx="3" fill="#ef4444"/>
+      <rect x="620" y="400" width="140" height="10" rx="3"/>
+    </g>
+    <line x1="110" y1="440" x2="1090" y2="440" stroke="#f3f4f6"/>
+    <g fill="#9ca3af">
+      <rect x="110" y="470" width="100" height="10" rx="3"/>
+      <rect x="260" y="470" width="200" height="10" rx="3"/>
+      <rect x="490" y="470" width="80" height="10" rx="3"/>
+      <rect x="620" y="470" width="120" height="10" rx="3"/>
+    </g>
+  </svg>
+</template>
+<div id="root"></div>
+
+<script src="data.js"></script>
+<script type="text/babel" src="kit/Icons.jsx"></script>
+<script type="text/babel" src="kit/Primitives.jsx"></script>
+<script type="text/babel" src="kit/SideMenu.jsx"></script>
+<script type="text/babel" src="kit/tweaks-panel.jsx"></script>
+<script type="text/babel" src="history.jsx"></script>
+
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+const TWEAK_DEFAULTS = {
+  "openFailedReboot": true,
+  "emptyState": false
+};
+
+function App(){
+  const [tweaks, setTweak] = window.useTweaks(TWEAK_DEFAULTS);
+  // Two-step flow: "list" (Miner List + drawer) → "page" (full per-miner page)
+  const [stage, setStage] = useState("list");
+  const [drawerOpen, setDrawerOpen] = useState(true);
+
+  const goToPage = () => { setDrawerOpen(false); setStage("page"); };
+  const goToList = () => { setStage("list"); setDrawerOpen(true); };
+
+  return (
+    <div className="lyra-app" data-screen-label={stage === "page" ? "02 View Miner · Full Page" : "01 Miner List · Drawer"}>
+      <LyraSideMenu active="Miner List" onNavigate={() => {}} />
+      <main className="lyra-content" style={{padding: 0, background: "var(--bg-2nd)"}}>
+        {stage === "page"
+          ? (tweaks.emptyState ? <MinerHistoryEmpty /> : <MinerHistoryPage onBack={goToList} />)
+          : <MinerListBackground onView={() => setDrawerOpen(true)} />
+        }
+      </main>
+
+      {drawerOpen && stage === "list" && (
+        <MinerHistoryDrawer
+          onClose={() => setDrawerOpen(false)}
+          onOpenFull={goToPage}
+        />
+      )}
+
+      <window.TweaksPanel title="Tweaks">
+        <window.TweakSection title="Flow">
+          <window.TweakRadio
+            label="Stage"
+            value={stage}
+            onChange={(v) => { v === "page" ? goToPage() : goToList(); }}
+            options={[
+              { value: "list", label: "Miner List" },
+              { value: "page", label: "Per-miner page" },
+            ]}
+          />
+        </window.TweakSection>
+      </window.TweaksPanel>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
 </body>
 </html>

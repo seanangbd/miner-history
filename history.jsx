@@ -134,8 +134,6 @@
       React.createElement("a", null, "Miner List"),
       React.createElement("span", { className: "sep" }, "›"),
       React.createElement("a", null, ip),
-      React.createElement("span", { className: "sep" }, "›"),
-      React.createElement("span", { className: "current" }, "History"),
     );
   }
 
@@ -147,7 +145,6 @@
           React.createElement(Icon, { name: "miner", size: 24 })
         ),
         React.createElement("div", { className: "mh-id-main" },
-          React.createElement("div", { className: "mh-id-page-label" }, "Miner History"),
           React.createElement("div", { className: "mh-id-title-row" },
             React.createElement("div", { className: "mh-id-ip" }, miner.ip),
             React.createElement("span", { className: "tag tag-positive", style: { padding: "2px 8px" } },
@@ -415,7 +412,7 @@
   }
 
   // ---------- FULL PAGE ----------
-  window.MinerHistoryPage = function(){
+  window.MinerHistoryPage = function({ onBack }){
     const miner = window.MH_MINER;
     const [tab, setTab] = useState("operations");
     const [opOpen, setOpOpen] = useState("OP-20260418-0223");   // open the failed reboot for visual interest
@@ -426,6 +423,14 @@
     const maintCount = window.MH_MAINTENANCE.length;
 
     return React.createElement("div", { className: "mh-content" },
+      React.createElement("div", { className: "mh-page-back" },
+        onBack && React.createElement("button", { className: "mh-back-btn", onClick: onBack },
+          React.createElement("svg", { width: 14, height: 14, viewBox: "0 0 16 16", fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round" },
+            React.createElement("path", { d: "M10 3L5 8L10 13" })
+          ),
+          "Back to Miner List"
+        ),
+      ),
       React.createElement(Breadcrumb, { ip: miner.ip }),
       React.createElement(IdentityHeader, { miner }),
 
@@ -513,7 +518,14 @@
             )
           ),
           React.createElement("div", { className: "mh-drawer-actions" },
-            React.createElement("button", { className: "mh-drawer-iconbtn" }, React.createElement(SvgMore)),
+            React.createElement("button", { className: "mh-drawer-open-btn", onClick: onOpenFull, title: "Open full details page" },
+              "Open details",
+              React.createElement("svg", { width: 13, height: 13, viewBox: "0 0 16 16", fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round" },
+                React.createElement("path", { d: "M6 3H3v10h10v-3" }),
+                React.createElement("path", { d: "M9 3h4v4" }),
+                React.createElement("path", { d: "M8 8L13 3" })
+              )
+            ),
             React.createElement("button", { className: "mh-drawer-iconbtn", onClick: onClose }, React.createElement(SvgClose)),
           )
         ),
@@ -534,9 +546,6 @@
                   React.createElement("div", { className: "mh-empty-title" }, "No events"),
                   React.createElement("div", { className: "mh-empty-body" }, "Try changing the filter."))
               : filtered.map((ev, i) => React.createElement(DrawerEvent, { key: i, ev }))
-          ),
-          React.createElement("div", { className: "mh-drawer-foot" },
-            React.createElement("a", { onClick: onOpenFull }, "View full history", React.createElement(SvgArrowR))
           )
         ),
 
